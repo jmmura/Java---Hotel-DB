@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:6969/hotel-manager
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  banner:
+    location: banner.txt
+
+  devtools:
+    livereload:
+      enabled: true
+
+
+

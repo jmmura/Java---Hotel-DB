@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" th:replace="~{layout/layout::layout(_,~{::content},_)}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div th:fragment="content">
+        <h1>Liste des chambres</h1>
+
+        <ul>
+            <li th:each="room : ${rooms}" th:object="${room}">
+                <p th:text="|numéro: *{numRoom},
+                lits simples: *{nbrSimpleBed},
+                lits doubles: *{nbrDoubleBed}|">
+                    données sur une chambre
+                </p>
+                <a th:href="@{/room/{num}(num=*{numRoom})}">
+                    <button>détails</button>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+<!--
+/pers/{nom}
+
+on peut en plus donner
+le param 'prenom'
+
+ex:
+
+/pers/dubois?prenom=luc
+-->
+
+</body>
+</html>
